@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.env
+*.token
+.venv/
+venv/
+bert_ner_model/
+balochi_gpt_model/
+checkpoint-*/
+results/
