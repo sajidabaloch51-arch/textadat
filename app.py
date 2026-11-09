@@ -85,9 +85,10 @@ with tab1:
 @st.cache_resource
 def load_gpt():
     try:
-        tok = AutoTokenizer.from_pretrained(GPT_MODEL_ID)
+        tok = AutoTokenizer.from_pretrained(GPT_MODEL_ID, use_fast=False)
     except Exception:
-        tok = AutoTokenizer.from_pretrained(GPT_BASE_ID)
+        tok = AutoTokenizer.from_pretrained(GPT_BASE_ID, use_fast=False)
+
     model = AutoModelForCausalLM.from_pretrained(GPT_MODEL_ID)
     model.eval()
     if tok.pad_token is None:
